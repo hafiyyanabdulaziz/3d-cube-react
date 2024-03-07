@@ -2,34 +2,29 @@ import React from "react";
 import "./style.css";
 
 const Cube = () => {
+  const onClick = () => {
+    console.log("onclick");
+    document.getElementById("putar").style.transform = `rotateX(-90deg)`;
+  };
   return (
     <div className='perspective'>
-      <label className='tab' htmlFor='tab-one'>
-        Tab 1
-      </label>
-      <label className='tab' htmlFor='tab-two'>
-        Tab 2
-      </label>
-      <label className='tab' htmlFor='tab-three'>
-        Tab 3
-      </label>
-      <input type='radio' name='tabs' id='tab-one' />
-      <input type='radio' name='tabs' id='tab-two' />
-      <input type='radio' name='tabs' id='tab-three' />
-      <div className='cube'>
+      <div id='putar' className='cube'>
         <div className='tab-content'>
           <h1>Tab 1</h1>
-          <p>THIS IS AWESOME</p>
         </div>
         <div className='tab-content'>
           <h1>Tab 2</h1>
-          <p>THIS IS COOL</p>
         </div>
         <div className='tab-content'>
           <h1>Tab 3</h1>
-          <p>THIS IS SWEET</p>
+        </div>
+        <div className='tab-content'>
+          <h1>Tab 4</h1>
         </div>
       </div>
+      <button onClick={onClick} style={{ marginTop: 20 }}>
+        click
+      </button>
     </div>
   );
 };
